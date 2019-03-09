@@ -1,0 +1,23 @@
+﻿@model Title
+
+@{
+    var formHeader = Model == null ? "Добавление тайтла" : "Редактирование тайтла";
+    ViewData["Title"] = formHeader;
+}
+
+<form class="form" asp-action="Save" metod="post">
+    <h3 class="my-4">
+        @formHeader
+    </h3>
+    <input asp-for="Id" type="hidden" />
+    <div class="form-group">
+        <label asp-for="Name">Название</label>
+        <input class="form-control" asp-for="Name" />
+        <label asp-for="PictureUrl">Превью</label>
+        <input class="form-control" asp-for="PictureUrl" />
+        <label asp-for="TitleDescription">Описание к тайтлу</label>
+        <textarea asp-for="TitleDescription"></textarea>
+    </div>
+
+        <input class="btn btn-success" type="submit" value="Сохранить" />       
+</form>

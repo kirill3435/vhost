@@ -1,0 +1,22 @@
+﻿@model Video
+
+@{
+    var formHeader = Model == null ? "Добавление серии" : "Редактирование серии";
+    ViewData["Title"] = formHeader;
+}
+
+<form class="form" asp-action="Save" metod="post">
+    <h3 class="my-4">
+    @formHeader
+    </h3>
+    <input asp-for="Id" type="hidden" />
+    <div class="form-group">
+        <label asp-for="Name">Название</label>
+        <input class="form-control" asp-for="Name" />
+        <label asp-for="VideoUrl">Ссылка на видео</label>
+        <input class="form-control" asp-for="VideoUrl" />
+        <label asp-for="VideoUrl">Тайтл</label>
+
+    <input class="btn btn-success" type="submit" value="Сохранить" />
+
+</form>
